@@ -1,0 +1,82 @@
+{
+	pony: {
+		name: "Twilight Sparkle",
+		race: 1,
+		mane: {
+			style: "twi",
+			palette: [
+				{
+					r:19,
+					g:32,
+					b:66,
+				},
+				{
+					r:39,
+					g:55,
+					b:113,
+				},
+				{
+					r:98,
+					g:46,
+					b:134,
+				},
+				{
+					r:230,
+					g:69,
+					b:139,
+				},
+			],
+		},
+		tail: {
+			style: "twi",
+			use_mane_palette: true,
+		},
+		palette: [
+			{
+				r:166,
+				g:110,
+				b:190,
+			},
+			{
+				r:212,
+				g:164,
+				b:232,
+			},
+			{
+				r:153,
+				g:100,
+				b:172,
+			},
+			{
+				r:174,
+				g:128,
+				b:196,
+			},
+			{
+				r:33,
+				g:0,
+				b:45,
+			},
+			{
+				r:100,
+				g:18,
+				b:141,
+			},
+		],
+		cutie_mark: "twi",
+		class: "magic_student"
+	},
+	base_stats:{
+		level: 1,
+		xp: 0,
+		hp: 11,
+		stamina: 72,
+		resource: 61,
+		strength: 1,
+		defense: 1,
+		skill: 6,
+		resilience: 4,
+		agility: 3,
+		luck: 3,
+	}
+}
