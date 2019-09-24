@@ -33,7 +33,7 @@ col_farleg_outline = $606060;
 col_farleg_fill = $9a9a9a;
 col_eye_top = $555555;
 col_eye_bottom = $000000;
-race = 0; // 0 = Earth, 1 = Unicorn, 2 = Pegasus, 3 = Alicorn
+//race = 0; // 0 = Earth, 1 = Unicorn, 2 = Pegasus, 3 = Alicorn
 mane = undefined;
 tail = undefined;
 //tailAndManeShareColors = true; For ponies with tails

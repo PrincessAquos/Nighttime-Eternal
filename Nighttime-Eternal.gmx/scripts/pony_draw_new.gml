@@ -1,5 +1,8 @@
 var tempsprite;
 
+body = identity[? "body"]
+bodyModel = body[? "model"]
+
 if (moving) {
     animCounter++;
     if (animCounter >= animSpeed) {
@@ -15,13 +18,13 @@ var headY = pony_get_head_y(y, moveSpriteIndex, moving);
 
 draw_pony_back_layer(id, moving);
 
-if(identity["tail"] != noone){
-    draw_pony_tail(identity["tail"], x, y);
+if (identity[? "tail"] != noone){
+    draw_pony_tail(identity[? "tail"], x, y);
 }
 
 draw_pony_front_layer(id, moving);
 
-if(race == "unicorn" || race == "alicorn") {
+if(bodyModel == "unicorn" || bodyModel == "alicorn") {
     draw_pony_horn(id, headX, headY);
 }
 
@@ -34,12 +37,12 @@ if (cutieMark != undefined) {
 
 draw_pony_eyes(id, headX, headY);
 
-if(race == "pegasus" || race == "alicorn") {
+if(bodyModel == "pegasus" || bodyModel == "alicorn") {
     draw_pony_wings(id);
 }
 
-if(identity["mane"] != noone){
-    draw_pony_mane(identity["mane"], headX, headY, race);
+if(identity[? "mane"] != noone){
+    draw_pony_mane(identity[? "mane"], headX, headY, bodyModel);
 }
 
 /*

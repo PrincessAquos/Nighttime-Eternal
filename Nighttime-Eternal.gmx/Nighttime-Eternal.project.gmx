@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="6" name="datafiles">
+  <datafiles number="8" name="datafiles">
     <datafile>
       <name>ponies.ini</name>
       <exists>-1</exists>
@@ -38,11 +38,11 @@
       </ConfigOptions>
       <filename>ponies.json</filename>
     </datafile>
-    <datafiles number="6" name="ponies">
+    <datafiles number="8" name="ponies">
       <datafile>
         <name>twilight.json</name>
         <exists>-1</exists>
-        <size>773</size>
+        <size>920</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -59,7 +59,7 @@
       <datafile>
         <name>sunset.json</name>
         <exists>-1</exists>
-        <size>0</size>
+        <size>929</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>

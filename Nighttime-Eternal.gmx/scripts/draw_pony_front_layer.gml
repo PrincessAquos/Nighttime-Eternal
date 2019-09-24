@@ -2,8 +2,8 @@
 var pony = argument[0];
 var moving = argument[1];
 
-var body = pony.identity["body"]
-var bodyPalette = body["palette"];
+var body = pony.identity[? "body"]
+var bodyPalette = body[? "palette"];
 
 if (!moving) {
     draw_sprite_ext(spr_body_outline, 0, pony.x, pony.y, 1, 1, 0, palette_get_color(bodyPalette, 0), 1);

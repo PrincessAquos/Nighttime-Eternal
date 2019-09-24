@@ -4,7 +4,7 @@ var argX = argument[1];
 var argY = argument[2];
 var argRace = argument[3];
 
-var model = accessory["model"]
+var model = accessory[? "model"]
 
 var tempsprite = -1;
 if (!accessory.useCustomColors) {

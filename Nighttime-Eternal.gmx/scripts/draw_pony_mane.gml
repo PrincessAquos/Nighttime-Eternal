@@ -5,8 +5,8 @@ var argHeadY = argument[2];
 var argRace = argument[3];
 
 var tempsprite = -1
-var model = mane["model"]
-var palette = mane["palette"]
+var model = mane[? "model"]
+var palette = mane[? "palette"]
 
 for(i = 0; i < palette_length(palette); i++) {
     if(argRace == "unicorn" || argRace == "alicorn") {

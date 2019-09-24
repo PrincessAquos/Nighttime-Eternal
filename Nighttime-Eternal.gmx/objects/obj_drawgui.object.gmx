@@ -228,7 +228,7 @@ var leftBound = view_wport - global.guiWidth;
 draw_set_color(c_black);
 var tempChar = global.cursor.selectedChar
 if (displayedChar != noone) {
-    draw_text(leftBound + 25, 25, displayedChar.identity.name);
+    draw_text(leftBound + 25, 25, displayedChar.identity[? "name"]);
     draw_text(leftBound + 25, 50, "HP: " + string(displayedChar.hp) + "/" + string(displayedChar.stats.maxHP))
     if (global.cursor.movePath != noone) {
         var stam = global.cursor.movePath.stamina;

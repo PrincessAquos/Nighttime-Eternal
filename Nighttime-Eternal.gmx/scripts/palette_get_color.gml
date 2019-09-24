@@ -2,4 +2,4 @@
 var palette = argument[0];
 var index = argument[1];
 
-return palette.colors[index];
+return palette[| index];

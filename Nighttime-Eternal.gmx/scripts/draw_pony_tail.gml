@@ -4,8 +4,8 @@ var argX = argument[1];
 var argY = argument[2];
 
 var tempsprite = -1
-var palette = tail["palette"]
-var model = tail["model"]
+var palette = tail[? "palette"]
+var model = tail[? "model"]
 for(i = 0; i < palette_length(palette); i++) {
     tempsprite = asset_get_index("spr_tail_" + model + string(i));
     if(tempsprite > -1) {

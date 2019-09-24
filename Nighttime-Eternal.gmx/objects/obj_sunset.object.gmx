@@ -56,7 +56,7 @@ var bodyPalette = create_palette_six(
     make_color_rgb(157, 192,185),
     make_color_rgb(152, 243, 194)
 )
-identity = create_pony_identity("Sunset Shimmer", 1, maneTemp, tailTemp, noone, bodyPalette);
+identity = create_pony_identity("Sunset Shimmer", "unicorn", maneTemp, tailTemp, noone, bodyPalette);
 
 stats = create_stats(1, 0, 17, 80, 65, 4, 3, 9, 7, 4, 5, 9)
 hp = stats.maxHP

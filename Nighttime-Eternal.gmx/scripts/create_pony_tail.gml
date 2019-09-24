@@ -2,12 +2,10 @@
 var argX = argument[0];
 var argY = argument[1];
 var argPalette = argument[2];
-var argStyle = argument[3];
+var argModel = argument[3];
 
-var tail = instance_create(argX, argY, obj_pony_tail);
-with (tail) {
-    palette = argPalette
-    style = argStyle
-}
+var tail = ds_map_create();
+ds_map_add(tail, "model", argModel);
+ds_map_add(tail, "palette", argPalette);
 
 return tail;

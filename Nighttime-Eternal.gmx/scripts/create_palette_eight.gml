@@ -8,16 +8,14 @@ var color5 = argument[5];
 var color6 = argument[6];
 var color7 = argument[7];
 
-var palette = instance_create(0, 0, obj_palette);
-with (palette) {
-    colors[0] = color0;
-    colors[1] = color1;
-    colors[2] = color2;
-    colors[3] = color3;
-    colors[4] = color4;
-    colors[5] = color5;
-    colors[6] = color6;
-    colors[7] = color7;
-}
+var palette = ds_list_create();
+ds_list_add(palette, color0);
+ds_list_add(palette, color1);
+ds_list_add(palette, color2);
+ds_list_add(palette, color3);
+ds_list_add(palette, color4);
+ds_list_add(palette, color5);
+ds_list_add(palette, color6);
+ds_list_add(palette, color7);
 
 return palette;

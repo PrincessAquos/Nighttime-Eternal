@@ -2,12 +2,10 @@
 var argX = argument[0];
 var argY = argument[1];
 var argPalette = argument[2];
-var argStyle = argument[3];
+var argModel = argument[3];
 
-var mane = instance_create(argX, argY, obj_pony_mane);
-with (mane) {
-    palette = argPalette
-    style = argStyle
-}
+var mane = ds_map_create();
+ds_map_add(mane, "model", argModel);
+ds_map_add(mane, "palette", argPalette);
 
 return mane;

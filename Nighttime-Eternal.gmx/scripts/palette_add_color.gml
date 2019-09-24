@@ -4,4 +4,4 @@ var color = argument[1];
 
 var length = palette_length(palette);
 
-palette.colors[length] = color;
+palette[| length] = color;

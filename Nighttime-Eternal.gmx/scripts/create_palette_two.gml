@@ -2,10 +2,8 @@
 var color0 = argument[0];
 var color1 = argument[1];
 
-var palette = instance_create(0, 0, obj_palette);
-with (palette) {
-    colors[0] = color0;
-    colors[1] = color1;
-}
+var palette = ds_list_create();
+ds_list_add(palette, color0);
+ds_list_add(palette, color1);
 
 return palette;
