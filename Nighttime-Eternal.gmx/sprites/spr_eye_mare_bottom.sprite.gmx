@@ -8,9 +8,9 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>5</bbox_left>
-  <bbox_right>7</bbox_right>
-  <bbox_top>9</bbox_top>
-  <bbox_bottom>11</bbox_bottom>
+  <bbox_right>8</bbox_right>
+  <bbox_top>15</bbox_top>
+  <bbox_bottom>15</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,6 +20,6 @@
   <width>32</width>
   <height>32</height>
   <frames>
-    <frame index="0">images\spr_horn_outline_0.png</frame>
+    <frame index="0">images\spr_eye_mare_bottom_0.png</frame>
   </frames>
 </sprite>

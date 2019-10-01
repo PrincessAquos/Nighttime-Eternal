@@ -102,21 +102,21 @@
     <sprite>sprites\spr_hud</sprite>
     <sprite>sprites\spr_cursor</sprite>
     <sprites name="Pony Components">
-      <sprite>sprites\spr_body_fill</sprite>
-      <sprite>sprites\spr_body_outline</sprite>
-      <sprite>sprites\spr_farleg_fill</sprite>
-      <sprite>sprites\spr_farleg_outline</sprite>
-      <sprite>sprites\spr_horn_fill</sprite>
-      <sprite>sprites\spr_horn_outline</sprite>
-      <sprite>sprites\spr_wing_fill</sprite>
-      <sprite>sprites\spr_wing_outline</sprite>
-      <sprite>sprites\spr_eye_top</sprite>
-      <sprite>sprites\spr_eye_bottom</sprite>
+      <sprite>sprites\spr_body_mare_fill</sprite>
+      <sprite>sprites\spr_body_mare_outline</sprite>
+      <sprite>sprites\spr_farleg_mare_fill</sprite>
+      <sprite>sprites\spr_farleg_mare_outline</sprite>
+      <sprite>sprites\spr_horn_mare_fill</sprite>
+      <sprite>sprites\spr_horn_mare_outline</sprite>
+      <sprite>sprites\spr_wing_mare_fill</sprite>
+      <sprite>sprites\spr_wing_mare_outline</sprite>
+      <sprite>sprites\spr_eye_mare_top</sprite>
+      <sprite>sprites\spr_eye_mare_bottom</sprite>
       <sprites name="Run Animation">
-        <sprite>sprites\spr_run_body_fill</sprite>
-        <sprite>sprites\spr_run_body_outline</sprite>
-        <sprite>sprites\spr_run_farleg_fill</sprite>
-        <sprite>sprites\spr_run_farleg_outline</sprite>
+        <sprite>sprites\spr_run_body_mare_fill</sprite>
+        <sprite>sprites\spr_run_body_mare_outline</sprite>
+        <sprite>sprites\spr_run_farleg_mare_fill</sprite>
+        <sprite>sprites\spr_run_farleg_mare_outline</sprite>
       </sprites>
       <sprites name="Styles">
         <sprites name="twi (Twilight Sparkle)">

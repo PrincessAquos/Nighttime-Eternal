@@ -49,7 +49,7 @@ var manePalette = create_palette_four(
 var maneTemp = create_pony_mane(x, y, manePalette, "twi")
 var tailTemp = create_pony_tail(x, y, manePalette, "twi")
 var bodyPalette = create_palette_six($bE6EA6, $E8A4D4, $ac6499, $c480ae, $450021, $8d1264)
-identity = create_pony_identity("Twi Earth", 0, maneTemp, tailTemp, noone, bodyPalette);
+identity = create_pony_identity("Twi Earth", "mare", "earth", maneTemp, tailTemp, noone, bodyPalette);
 
 stats = create_stats(1, 0, 17, 100, 60, 5, 5, 7, 6, 4, 5, 8)
 hp = stats.maxHP

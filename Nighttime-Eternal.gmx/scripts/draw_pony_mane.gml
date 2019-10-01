@@ -9,6 +9,7 @@ var model = mane[? "model"]
 var palette = mane[? "palette"]
 
 for(i = 0; i < palette_length(palette); i++) {
+    //show_debug_message("Color " + string(i) + ": " + string(palette_get_color(palette, i)))
     if(argRace == "unicorn" || argRace == "alicorn") {
         tempsprite = asset_get_index("spr_mane_" + model + string(i) + "_unicorn");
     }

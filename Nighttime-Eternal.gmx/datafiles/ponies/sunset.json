@@ -1,9 +1,44 @@
 {
 	pony: {
 		name: "Sunset Shimmer",
-		race: 1,
+		race: "unicorn",
+		body: {
+			model: "mare",
+			palette: [
+				{
+					r:214,
+					g:180,
+					b:56,
+				},
+				{
+					r:254,
+					g:223,
+					b:129,
+				},
+				{
+					r:214,
+					g:180,
+					b:56,
+				},
+				{
+					r:254,
+					g:223,
+					b:129,
+				},
+				{
+					r:157,
+					g:192,
+					b:185,
+				},
+				{
+					r:152,
+					g:243,
+					b:194,
+				},
+			],
+		}
 		mane: {
-			style: "shim",
+			model: "shim",
 			palette: [
 				{
 					r:143,
@@ -28,43 +63,10 @@
 			],
 		},
 		tail: {
-			style: "shim",
+			model: "shim",
 			use_mane_palette: true,
 		},
-		palette: [
-			{
-				r:214,
-				g:180,
-				b:56,
-			},
-			{
-				r:254,
-				g:223,
-				b:129,
-			},
-			{
-				r:214,
-				g:180,
-				b:56,
-			},
-			{
-				r:254,
-				g:223,
-				b:129,
-			},
-			{
-				r:157,
-				g:192,
-				b:185,
-			},
-			{
-				r:152,
-				g:243,
-				b:194,
-			},
-		],
 		cutie_mark: "shim",
-		class: "princess_protege"
 	},
 	base_stats:{
 		level: 5,
@@ -78,5 +80,6 @@
 		resilience: 5,
 		agility: 5,
 		luck: 5,
+		class: "princess_protege"
 	}
 }
