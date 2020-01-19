@@ -11,7 +11,7 @@ var newMoveNode = instance_create(argX, argY, obj_move_node);
 with (newMoveNode) {
     pony = argPony;
     head = false;
-    visible = true;
+    visible = false;
     tile = argMoveTile;
     left = noone;
     right = noone;
