@@ -42,21 +42,16 @@ var optimalDir = opposite_direction(targetDir);
 
 var new_node = move_map_get_node(argX, argY, argPony);
 
-if (new_node != noone) oldStamina = new_node.maxStam;
-
-if (argStamina >= oldStamina) {
-    if (new_node == noone) {
-        new_node = create_move_node(argX, argY, argPony, argStamina, optimalDir, prevNode, moveTile);
-    }
-    else {
-        update_move_node(new_node, argStamina, optimalDir, prevNode);
-    }
-    if (argStamina > oldStamina) {
-        move_node_add_to_queue(pQueue, new_node);
+if (new_node == noone) {
+    if (argStamina >= 0) {
+        new_node = create_move_node(argX, argY, argPony, argStamina, optimalDir, prevNode, moveTile, pQueue);
     }
 }
 else {
-    new_node = noone;
+    oldStamina = new_node.maxStam;
+    if (argStamina > oldStamina) {
+        update_move_node(new_node, argStamina, optimalDir, prevNode, pQueue);
+    }
 }
 
 return new_node;

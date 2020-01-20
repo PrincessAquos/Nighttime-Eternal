@@ -166,21 +166,16 @@
     <scripts name="New Move Mapping">
       <script>scripts\create_move_map_PQBFS.gml</script>
       <script>scripts\move_map_queue_neighbors.gml</script>
+      <script>scripts\get_direction.gml</script>
+      <script>scripts\move_map_queue_in_direction.gml</script>
+      <script>scripts\get_remaining_stamina.gml</script>
       <script>scripts\is_valid_move.gml</script>
       <script>scripts\remaining_stamina.gml</script>
-      <script>scripts\move_node_add_to_queue.gml</script>
-      <script>scripts\get_direction.gml</script>
-      <script>scripts\queue_items_get_direction.gml</script>
-      <script>scripts\queue_items_get_node.gml</script>
       <script>scripts\opposite_direction.gml</script>
-      <scripts name="WIP">
-        <script>scripts\update_move_node.gml</script>
-        <script>scripts\create_move_node.gml</script>
-        <script>scripts\move_map_queue_in_direction.gml</script>
-        <script>scripts\set_connecting_node.gml</script>
-        <script>scripts\move_map_queue_in_direction_x.gml</script>
-        <script>scripts\get_remaining_stamina.gml</script>
-      </scripts>
+      <script>scripts\create_move_node.gml</script>
+      <script>scripts\update_move_node.gml</script>
+      <script>scripts\set_connecting_node.gml</script>
+      <script>scripts\move_node_add_to_queue.gml</script>
     </scripts>
     <scripts name="Object Functions">
       <scripts name="Pony">
