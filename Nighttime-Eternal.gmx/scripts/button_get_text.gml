@@ -6,8 +6,8 @@ switch (function) {
         return "Move";
     case "stats":
         return "Check Stats";
-    case "cancel":
-        return "Cancel";
+    case "close":
+        return "Close";
     case "attack":
         return "Attack";
     case "wait":

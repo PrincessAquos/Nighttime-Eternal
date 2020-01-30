@@ -5,7 +5,7 @@ var functions = ds_list_create()
 if (move_map_has_neighbors(argPony.moveMap)) {
     ds_list_add(functions, "move")
 }
-ds_list_add(functions, "attack", "stats", "cancel");
+ds_list_add(functions, "attack", "stats", "close");
 return create_menu_mini(argPony.x + global.gridSize, argPony.y, functions);
 /*
 scr_traverse_moves_new(cursor.clickedChar, noone, 0, "incr_sprite_index_by", 1);

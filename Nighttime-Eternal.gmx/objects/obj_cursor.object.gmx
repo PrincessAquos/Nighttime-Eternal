@@ -32,7 +32,6 @@ tempStamina = 0;
 global.cursor = id;
 pathGraphics = noone;
 storeNode = noone;
-isPaused = false;
 menu = noone;
 </string>
           </argument>
@@ -57,9 +56,17 @@ menu = noone;
           <argument>
             <kind>1</kind>
             <string>/// Places in game cursor at mouse
-if (!isPaused) {
-    x = (mouse_x div 32) * 32;// attach object 3 to mouse x location
-    y = (mouse_y div 32) * 32;// attach object 3 to mouse y location
+switch(global.game.state) {
+    case "selecting":
+    case "movement":
+    case "action":
+        x = (mouse_x div 32) * 32;// attach object 3 to mouse x location
+        y = (mouse_y div 32) * 32;// attach object 3 to mouse y location
+        break;
+    case "menu":
+    case "animating":
+    default:
+        break;
 }
 if (x &lt; 0) x = 0;
 if (y &lt; 0) y = 0;
@@ -85,14 +92,11 @@ if (y &lt; 0) y = 0;
             <kind>1</kind>
             <string>/// Pony selection and clicking
 
+// Update your selection every step
 cursor_select_pony(id, x, y);
 
-/*
-if (clickedChar != noone &amp;&amp; mouse_check_button_pressed(mb_left)) {
-    if selectedChar 
-}
-*/
-if (mouse_check_button_pressed(mb_left) &amp;&amp; !isPaused) {
+// If you click the mouse, call the click event script
+if (mouse_check_button_pressed(mb_left)) {
     cursor_click(id);
 }
 </string>
@@ -115,29 +119,35 @@ if (mouse_check_button_pressed(mb_left) &amp;&amp; !isPaused) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (clickedChar != noone &amp;&amp; movePath != noone) {
-    var node = move_map_get_node(x, y, clickedChar);
-    if (node != noone &amp;&amp; node != storeNode) {
-        if (node.head) {
-            move_path_clear(movePath);
-        }
-        else {
-            var retreadTile = move_path_node_retread(movePath, node)
-            if (retreadTile != noone) {
-                /* Delete all tiles after this one */
-                move_path_clear_after(movePath, retreadTile)
-            }
-            else if (move_path_node_is_valid(movePath, node)) {
-                move_path_add(movePath, node);
+            <string>/// Build move paths when in the movement state
+if (global.game.state == "movement") {
+    if (clickedChar != noone &amp;&amp; movePath != noone) {
+        var node = move_map_get_node(x, y, clickedChar);
+        if (node != noone &amp;&amp; node != storeNode) {
+            if (node.head) {
+                move_path_clear(movePath);
             }
             else {
-                move_path_clear(movePath)
-                most_efficient_path(movePath, node, clickedChar);
+                var retreadTile = move_path_node_retread(movePath, node)
+                if (retreadTile != noone) {
+                    /* Delete all tiles after this one */
+                    move_path_clear_after(movePath, retreadTile)
+                }
+                else if (move_path_node_is_valid(movePath, node)) {
+                    move_path_add(movePath, node);
+                }
+                else {
+                    move_path_clear(movePath)
+                    most_efficient_path(movePath, node, clickedChar);
+                }
             }
         }
+        
+        storeNode = node;
     }
-    
-    storeNode = node;
+    else {
+        show_debug_message("Invalid game state: In the movement state either without a clicked character or move path.")
+    }
 }
 </string>
           </argument>

@@ -16,8 +16,8 @@
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1120</w>
-    <h>694</h>
+    <w>1016</w>
+    <h>600</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -52,12 +52,12 @@
   </views>
   <instances>
     <instance objName="obj_twilight" x="160" y="160" name="inst_C44BD1A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grid" x="0" y="0" name="inst_10AA762D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mouse_tracking" x="32" y="0" name="inst_8CB28F65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grid" x="-32" y="-32" name="inst_10AA762D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mouse_tracking" x="0" y="-32" name="inst_8CB28F65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cursor" x="32" y="32" name="inst_D4B0BB21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object6" x="128" y="96" name="inst_84ABD796" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_twi_earth" x="320" y="288" name="inst_3C6F0D14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_view_controller" x="64" y="0" name="inst_A3AE3438" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_view_controller" x="32" y="-32" name="inst_A3AE3438" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_neutral_stam10" x="0" y="0" name="inst_32495B96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_neutral_stam10" x="32" y="0" name="inst_9C51C85F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_neutral_stam10" x="64" y="0" name="inst_3BA4C370" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -294,14 +294,15 @@
     <instance objName="obj_movetile_neutral_stam10" x="32" y="352" name="inst_CAD40883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_neutral_stam10" x="0" y="352" name="inst_3EA3F691" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_neutral_stam10" x="192" y="128" name="inst_58AF9CB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_drawgui" x="96" y="0" name="inst_577387DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_drawgui" x="64" y="-32" name="inst_577387DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sunset" x="416" y="160" name="inst_C5BD4A9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_options" x="128" y="0" name="inst_0807D7A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_options" x="96" y="-32" name="inst_0807D7A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_wall" x="160" y="224" name="inst_7AEADE86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_wall" x="192" y="224" name="inst_27ABAA10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_wall" x="224" y="224" name="inst_53D885E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_movetile_wall" x="256" y="224" name="inst_B57EADEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_main" x="160" y="0" name="inst_82255BBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_main" x="128" y="-32" name="inst_82255BBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_game" x="-64" y="-32" name="inst_A0525CBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_ponyville_day" x="0" y="0" w="32" h="32" xo="96" yo="256" id="10000001" name="inst_50B3714B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

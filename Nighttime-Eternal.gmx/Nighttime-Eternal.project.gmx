@@ -287,6 +287,7 @@
       <script>scripts\pony_draw_old.gml</script>
     </scripts>
     <script>scripts\create_move_map_BFS.gml</script>
+    <script>scripts\game_set_state.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_Pony</object>
@@ -322,6 +323,7 @@
     <object>objects\obj_menu_button</object>
     <object>objects\obj_main</object>
     <object>objects\obj_char_stats</object>
+    <object>objects\obj_game</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test</room>

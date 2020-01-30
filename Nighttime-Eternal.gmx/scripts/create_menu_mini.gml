@@ -4,7 +4,7 @@ var argY = argument[1];
 var argFunctions = argument[2];
 
 //CONSTANTS
-var buttonHeight = 16 //font size + 1 except no, not anymore
+var buttonHeight = 32 //font size + 1 except no, not anymore
 var buttonWidth = 112
 
 var newMenuMini = instance_create(argX, argY, obj_menu_mini);
@@ -15,6 +15,6 @@ with(newMenuMini) {
     }
 }
 ds_list_destroy(argFunctions);
-global.cursor.isPaused = true;
+game_set_state("menu")
 
 return newMenuMini;

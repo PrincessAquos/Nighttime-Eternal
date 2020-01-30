@@ -157,7 +157,7 @@ if (selected == true &amp;&amp; mouse_check_button_pressed(mb_left)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (moving) {
+            <string>if(global.game.state == "animating" and moving) {
     if (!test) pony_move(id, path)
 }
 </string>
