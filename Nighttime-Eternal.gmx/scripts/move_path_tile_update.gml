@@ -5,108 +5,110 @@ var path_tile = argument[0];
 
 with (path_tile) {
     
+    // If this is the tip of the path, then it should have an arrow image.
     if (next == noone) {
-        image_index = dir;
+        switch(dir) {
+            // Left Arrow
+            case -1:
+                image_index = 0
+                break;
+            // Right Arrow
+            case 1:
+                image_index = 1
+                break;
+            // Up Arrow
+            case -2:
+                image_index = 2
+                break;
+            // Down Arrow
+            case 2:
+                image_index = 3
+                break;
+        }
     }
+    // Otherwise, figure out which path segment to use.
     else {
-        var dir1 = 0
-        var dir2 = 0
-        
-        // Convert the direction format
-        // The path tiles currently have a format where
-        //      left = 0
-        //      right = 1
-        //      up = 2
-        //      down = 3
-        // This is actually something I plan to change to make it more
-        // consistent with move maps. 
-        // I was very obsessed with the idea of it being disgustingly simple 
-        // for the final node, the one with the arrow, to figure out which image
-        // to use. However, it has made the code kinda confusing.
-        switch (dir) {
-            // Make left -1, which indicates a negative in the x direction
-            case 0:
-                dir1 = -1
-                break;
-            case 1:
-                dir1 = 1
-                break;
-            case 2:
-                dir1 = -2
-                break;
-            case 3:
-                dir1 = 2
-                break;
-        }
-        switch (next.dir) {
-            case 0:
-                dir2 = -1
-                break;
-            case 1:
-                dir2 = 1
-                break;
-            case 2:
-                dir2 = -2
-                break;
-            case 3:
-                dir2 = 2
-                break;
-        }
-//Crazy math wizardry
-/*
-left = -1
-right = 1
-up = -2
-down = 2
+        /*
+        Next, use the current node's direction and the next node's direction
+        to calculate what kind of segment the node is. Since straight to the left and
+        straight to the right would use the same path segment image, along with
+        "left then up" sharing the same corner segment as "down then right," I devised
+        an algorithm to figure out what the image should be.
+        --------------------------
+        *Crazy math wizardry time*
+        --------------------------
+        Using the power of subtraction and my specific way of representing directions,
+        I can identify the different types of movements and group them accordingly.
 
-|_
-left - up = 1
-down - right = 1
-_
- |
-up - left = -1
-right - down = -1
- _
-|
-left - down = -3
-up - right = -3
-
-_|
-down - left = 3
-right - up = 3
-
-Why use a mess of if/then statements, when you can just
-use a confusing math calculation?
-*drops keyboard*
-That was supposed to be like dropping the mic, since,
-you know, I'm typing this and not speaking it, but it
-kinda just comes off like I'm a klutz. The programmer
-is Derpy Hooves confirmed.
-*/
-                
-        //make the other sprites happen
-        switch (dir1 - dir2) {
-            // A "0" indicates no turn
+        Just like with move maps, the directions are:
+        left = -1
+        right = 1
+        up = -2
+        down = 2
+        */
+        switch (dir - next.dir) {
+            /*
+            If both path tiles are moving in the same direction, the subtraction results
+            in a 0. So 0 indicates no turn.
+            */
             case 0:
-                // This is where "1 means horizonal, 2 means vertical" comes in handy
-                if (abs(dir1) == 1) image_index = 8
-                else if (abs(dir1) == 2) image_index = 9
+                // The absolute value of either tile's direction then indicates
+                // horizontal or vertical, with values of 1 and 2 respectively.
+                if (abs(dir) == 1) image_index = 8
+                else if (abs(dir) == 2) image_index = 9
+                // Otherwise, set to the panic image index, which draws no path segment
                 else image_index = 10
                 break;
+
+            // Lower left corner
+            // |_
+            // left - up = 1
+            // down - right = 1
             case 1:
                 image_index = 7;
                 break;
+
+            // Upper right corner
+            // _
+            //  |
+            // up - left = -1
+            // right - down = -1
             case -1:
                 image_index = 4;
                 break;
+
+            // Upper left corner
+            //  _
+            // |
+            // left - down = -3
+            // up - right = -3
             case 3:
                 image_index = 6;
                 break;
+
+            // Lower right corner
+            // _|
+            // down - left = 3
+            // right - up = 3
             case -3:
                 image_index = 5;
                 break;
+
+            // This is the panic option. This draws no path segment.
             default:
                 image_index = 10;
+
+            /*
+            Why use a mess of if/then statements, when you can just
+            use a weird system of numbers?
+
+            *drops keyboard*
+
+            That was supposed to be like dropping the mic, since,
+            you know, I'm typing this and not speaking it, but it
+            kinda just comes off like I'm a klutz. The programmer
+            is Derpy Hooves confirmed.
+            */
         }
     }
 }
