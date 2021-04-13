@@ -1,3 +1,7 @@
+# Updated Readme Pending
+
+Given the switch from Game Maker to GODOT over the past year, almost all of the following readme is out of date. A new version of this readme isn't the highest priority at the moment, but it will happen.
+
 # Informal Disclaimer
 Nighttime Eternal is a fan game inspired by the television show My Little Pony: Friendship is Magic. My Little Pony, My Little Pony: Friendship is Magic, its trademarks, characters, worlds, stories, and other components are all property of Hasbro and related entities. This project is not made in affiliation with Hasbro, nor is it made in any official affiliation with said property. This is a passion project meant purely to celebrate the show and the fan community surrounding it. It will not and should not be sold, unless some form of authorization from all significant copyright holders leads to me removing this disclaimer. That is something I sincerely do not expect to ever happen, but occasionally seemingly impossible things do happen. I'm not holding my breath. 
 
