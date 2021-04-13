@@ -1,0 +1,45 @@
+{
+	"name": "Applejack",
+	"appearance": {
+		"palette": "applejack",
+		"head_accessory_1": "aj_hat",
+		"body_model": "mare",
+		"body_variant": "earth_pony",
+		"mane_model": "aj",
+		"tail_model": "aj",
+		"cutie_mark": "aj",
+	},
+	"base_stats": {
+		"hp": 6,
+		"stamina": 70, 
+		"resource": 65,
+		"strength": 3, 
+		"defense": 3, 
+		"intellect": 7, 
+		"resilience": 5,
+		"agility": 5, 
+		"luck": 5,
+	},
+	"growths": {
+		"hp": 0.8,
+		"stamina": 0.8, 
+		"resource": 1.2,
+		"strength": 0.2, 
+		"defense": 0.5, 
+		"intellect": 1.4, 
+		"resilience": 0.9,
+		"agility": 0.5, 
+		"luck": 0.4,
+	},
+	"class_options": [
+		"Magic Student",
+		"Organizer",
+		"Bookworm",
+	],
+	"cutie_mark": {
+		"name": "The Magic of Friendship",
+		"learnset": [
+			
+		],
+	},
+}

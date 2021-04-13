@@ -1,0 +1,189 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Action",
+"language": "GDScript",
+"path": "res://char_components/char_properties/action.gd"
+}, {
+"base": "ViewportContainer",
+"class": "Appearance",
+"language": "GDScript",
+"path": "res://char_components/appearance.gd"
+}, {
+"base": "Reference",
+"class": "CastleDB",
+"language": "GDScript",
+"path": "res://addons/thejustinwalsh.castledb/castledb_types.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://char_components/character.gd"
+}, {
+"base": "Object",
+"class": "CharacterClass",
+"language": "GDScript",
+"path": "res://char_components/char_class.gd"
+}, {
+"base": "Sprite",
+"class": "CharacterSpawn",
+"language": "GDScript",
+"path": "res://rooms/test/char_spawn.gd"
+}, {
+"base": "Area2D",
+"class": "Cursor",
+"language": "GDScript",
+"path": "res://rooms/test/cursor.gd"
+}, {
+"base": "Reference",
+"class": "DirHelper",
+"language": "GDScript",
+"path": "res://directions.gd"
+}, {
+"base": "Reference",
+"class": "FileHelper",
+"language": "GDScript",
+"path": "res://file_helper.gd"
+}, {
+"base": "Reference",
+"class": "LevelHelper",
+"language": "GDScript",
+"path": "res://level_helper.gd"
+}, {
+"base": "TileMap",
+"class": "LevelMap",
+"language": "GDScript",
+"path": "res://rooms/test/level_map.gd"
+}, {
+"base": "TileMap",
+"class": "MoveMap",
+"language": "GDScript",
+"path": "res://objects/move_node_map.gd"
+}, {
+"base": "TileSet",
+"class": "MoveNodeTileSet",
+"language": "GDScript",
+"path": "res://objects/move_node_tileset.gd"
+}, {
+"base": "MarginContainer",
+"class": "PanelCharacter",
+"language": "GDScript",
+"path": "res://ui/panel_char_details.gd"
+}, {
+"base": "TileMap",
+"class": "PathTileMap",
+"language": "GDScript",
+"path": "res://objects/path_tilemap.gd"
+}, {
+"base": "Node",
+"class": "SceneCharacters",
+"language": "GDScript",
+"path": "res://scene_characters.gd"
+}, {
+"base": "Node2D",
+"class": "Stage",
+"language": "GDScript",
+"path": "res://rooms/test/stage.gd"
+}, {
+"base": "Object",
+"class": "Stat",
+"language": "GDScript",
+"path": "res://char_components/char_properties/stat.gd"
+}, {
+"base": "Node",
+"class": "Talent",
+"language": "GDScript",
+"path": "res://char_components/char_properties/talent.gd"
+}, {
+"base": "Stat",
+"class": "ValueStat",
+"language": "GDScript",
+"path": "res://char_components/char_properties/stat_value.gd"
+} ]
+_global_script_class_icons={
+"Action": "",
+"Appearance": "",
+"CastleDB": "",
+"Character": "",
+"CharacterClass": "",
+"CharacterSpawn": "",
+"Cursor": "",
+"DirHelper": "",
+"FileHelper": "",
+"LevelHelper": "",
+"LevelMap": "",
+"MoveMap": "",
+"MoveNodeTileSet": "",
+"PanelCharacter": "",
+"PathTileMap": "",
+"SceneCharacters": "",
+"Stage": "",
+"Stat": "",
+"Talent": "",
+"ValueStat": ""
+}
+
+[application]
+
+config/name="Nighttime Eternal"
+config/icon="res://icon.png"
+
+[autoload]
+
+Data="*res://db/data.cdb"
+
+[display]
+
+window/size/width=960
+window/size/height=540
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "thejustinwalsh.castledb" )
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+scroll_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+scroll_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+scroll_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+scroll_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"
+
+[world]
+
+2d/cell_size=32

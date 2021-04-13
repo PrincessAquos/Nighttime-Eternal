@@ -1,0 +1,36 @@
+{
+	"name": "Sunset Shimmer",
+	"appearance": {
+		"palette": "sunset",
+		"body_model": "mare",
+		"body_variant": "unicorn",
+		"mane_model": "sunset",
+		"tail_model": "sunset",
+		"cutie_mark": "sunset",
+	},
+	"base_stats": {
+		"hp": 7,
+		"stamina": 80, 
+		"resource": 75,
+		"strength": 4, 
+		"defense": 2, 
+		"intellect": 8, 
+		"resilience": 6,
+		"agility": 6, 
+		"luck": 4,
+	},
+	"growths": {
+		"hp": 0.8,
+		"stamina": 0.8, 
+		"resource": 1.1,
+		"strength": 0.2, 
+		"defense": 0.3, 
+		"intellect": 1.4, 
+		"resilience": 0.8,
+		"agility": 0.5, 
+		"luck": 0.4,
+	},
+	"class_options": [
+		"Princess Protege",
+	],
+}

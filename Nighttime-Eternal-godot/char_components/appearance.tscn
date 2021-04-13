@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://char_components/outline.shader" type="Shader" id=1]
+[ext_resource path="res://char_components/appearance.gd" type="Script" id=2]
+[ext_resource path="res://sprites/body/mare_run.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://char_components/palette_shader.tres" type="Material" id=4]
+[ext_resource path="res://sprites/body/mare.png" type="Texture" id=5]
+[ext_resource path="res://sprites/accessory/aj_hat.png" type="Texture" id=6]
+[ext_resource path="res://sprites/mane/twilight_FG.png" type="Texture" id=7]
+[ext_resource path="res://sprites/mane/twilight_BG.png" type="Texture" id=8]
+[ext_resource path="res://sprites/cutie_mark/twilight.png" type="Texture" id=9]
+[ext_resource path="res://sprites/body/mare_horn.png" type="Texture" id=10]
+[ext_resource path="res://sprites/tail/twilight.png" type="Texture" id=11]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/draw_outline = false
+shader_param/outline_color = Color( 0, 0, 1, 1 )
+
+[node name="Appearance" type="ViewportContainer"]
+material = SubResource( 1 )
+margin_left = -17.0
+margin_top = -34.0
+margin_right = 49.0
+margin_bottom = 32.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 66, 66 )
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+usage = 0
+render_target_update_mode = 3
+
+[node name="Character" type="Node2D" parent="Viewport"]
+material = ExtResource( 4 )
+position = Vector2( 33, 50 )
+
+[node name="Head Accessory 1" type="Sprite" parent="Viewport/Character"]
+visible = false
+texture = ExtResource( 6 )
+
+[node name="Body Accessory 1" type="Sprite" parent="Viewport/Character"]
+visible = false
+
+[node name="Tail" type="Sprite" parent="Viewport/Character"]
+use_parent_material = true
+texture = ExtResource( 11 )
+
+[node name="Body" type="Sprite" parent="Viewport/Character"]
+use_parent_material = true
+texture = ExtResource( 5 )
+
+[node name="Running" type="AnimatedSprite" parent="Viewport/Character"]
+visible = false
+use_parent_material = true
+frames = ExtResource( 3 )
+
+[node name="Head Accessory 2" type="Sprite" parent="Viewport/Character"]
+visible = false
+
+[node name="Body Accessory 2" type="Sprite" parent="Viewport/Character"]
+visible = false
+
+[node name="ManeBG" type="Sprite" parent="Viewport/Character"]
+use_parent_material = true
+texture = ExtResource( 8 )
+
+[node name="Horn" type="Sprite" parent="Viewport/Character"]
+visible = false
+use_parent_material = true
+texture = ExtResource( 10 )
+
+[node name="ManeFG" type="Sprite" parent="Viewport/Character"]
+use_parent_material = true
+texture = ExtResource( 7 )
+
+[node name="Cutie Mark" type="Sprite" parent="Viewport/Character"]
+texture = ExtResource( 9 )
+
+[node name="Head Accessory 3" type="Sprite" parent="Viewport/Character"]
+visible = false
+
+[node name="Body Accessory 3" type="Sprite" parent="Viewport/Character"]
+visible = false
+[connection signal="frame_changed" from="Viewport/Character/Running" to="." method="_on_Running_frame_changed"]

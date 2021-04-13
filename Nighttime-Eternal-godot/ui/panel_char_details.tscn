@@ -1,0 +1,217 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://ui/char_stamina_bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/char_resource_bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/char_special_talent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/char_magic_bar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/char_portrait.png" type="Texture" id=5]
+[ext_resource path="res://ui/panel_action_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/char_stats.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/panel_class_rank.tscn" type="PackedScene" id=8]
+[ext_resource path="res://char_components/char_palette.shader" type="Shader" id=9]
+[ext_resource path="res://ui/char_portrait.tscn" type="PackedScene" id=10]
+[ext_resource path="res://sprites/palette/twilight.png" type="Texture" id=11]
+[ext_resource path="res://ui/char_background.png" type="Texture" id=14]
+[ext_resource path="res://ui/char_name.png" type="Texture" id=17]
+[ext_resource path="res://ui/char_name_class_bg.png" type="Texture" id=19]
+[ext_resource path="res://ui/test_font/ntesmall.fnt" type="BitmapFont" id=21]
+[ext_resource path="res://ui/panel_char_details.gd" type="Script" id=23]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 9 )
+shader_param/palette_size = 32.0
+shader_param/palette = ExtResource( 11 )
+
+[node name="CharacterDetails" type="MarginContainer"]
+margin_right = 321.0
+margin_bottom = 192.0
+grow_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="."]
+margin_right = 321.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 320, 192 )
+texture = ExtResource( 14 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGMargin" type="MarginContainer" parent="."]
+margin_right = 321.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 320, 192 )
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Columns" type="HBoxContainer" parent="BGMargin"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 317.0
+margin_bottom = 188.0
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PortraitStats" type="VBoxContainer" parent="BGMargin/Columns"]
+margin_right = 64.0
+margin_bottom = 184.0
+custom_constants/separation = 4
+
+[node name="PortraitBorder" type="TextureRect" parent="BGMargin/Columns/PortraitStats"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="Portrait" parent="BGMargin/Columns/PortraitStats/PortraitBorder" instance=ExtResource( 10 )]
+material = SubResource( 1 )
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="Stats" parent="BGMargin/Columns/PortraitStats" instance=ExtResource( 7 )]
+
+[node name="Main Section" type="VBoxContainer" parent="BGMargin/Columns"]
+margin_left = 68.0
+margin_right = 313.0
+margin_bottom = 184.0
+size_flags_horizontal = 9
+size_flags_vertical = 9
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BGMargin/Columns/Main Section"]
+margin_right = 245.0
+margin_bottom = 94.0
+custom_constants/separation = 1
+
+[node name="NameClassBarsColumn" type="VBoxContainer" parent="BGMargin/Columns/Main Section/HBoxContainer"]
+margin_right = 162.0
+margin_bottom = 94.0
+
+[node name="NameClass" type="MarginContainer" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn"]
+margin_right = 162.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 161, 42 )
+
+[node name="Background" type="NinePatchRect" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/NameClass"]
+margin_right = 162.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 161, 30 )
+size_flags_horizontal = 3
+texture = ExtResource( 19 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="VBoxContainer" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/NameClass"]
+margin_right = 162.0
+margin_bottom = 42.0
+custom_constants/separation = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="MarginContainer" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body"]
+margin_right = 162.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 161, 20 )
+custom_constants/margin_right = 8
+custom_constants/margin_top = 3
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/Name"]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 154.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 21 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Test Character"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClassRank" type="HBoxContainer" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body"]
+margin_top = 23.0
+margin_right = 162.0
+margin_bottom = 40.0
+
+[node name="Class" type="MarginContainer" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank"]
+margin_right = 136.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 136, 17 )
+custom_constants/margin_top = 2
+custom_constants/margin_left = 8
+
+[node name="Label" type="Label" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank/Class"]
+margin_left = 8.0
+margin_top = 3.0
+margin_right = 136.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 21 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Princess Protege"
+
+[node name="Rank" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank" instance=ExtResource( 8 )]
+
+[node name="Bars" type="MarginContainer" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn"]
+margin_top = 46.0
+margin_right = 162.0
+margin_bottom = 94.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/Bars"]
+margin_right = 162.0
+margin_bottom = 48.0
+texture = ExtResource( 17 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/Bars"]
+margin_right = 162.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 162, 48 )
+custom_constants/separation = 0
+
+[node name="HealthBar" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/Bars/VBoxContainer" instance=ExtResource( 2 )]
+
+[node name="MagicBar" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/Bars/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 16.0
+margin_bottom = 32.0
+
+[node name="StaminaBar" parent="BGMargin/Columns/Main Section/HBoxContainer/NameClassBarsColumn/Bars/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 32.0
+margin_bottom = 48.0
+
+[node name="TalentColumn" type="VBoxContainer" parent="BGMargin/Columns/Main Section/HBoxContainer"]
+margin_left = 163.0
+margin_right = 245.0
+margin_bottom = 94.0
+
+[node name="MarkAndLevel" parent="BGMargin/Columns/Main Section/HBoxContainer/TalentColumn" instance=ExtResource( 3 )]
+
+[node name="Actions" parent="BGMargin/Columns/Main Section" instance=ExtResource( 6 )]

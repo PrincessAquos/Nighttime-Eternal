@@ -1,0 +1,791 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://ui/char_stat_label_str.png" type="Texture" id=1]
+[ext_resource path="res://ui/char_stat_label_def.png" type="Texture" id=2]
+[ext_resource path="res://ui/char_special_talent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/char_name_class_bg.png" type="Texture" id=4]
+[ext_resource path="res://ui/char_magic_bar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/char_stamina_bar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/char_resource_bar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui/char_portrait.png" type="Texture" id=9]
+[ext_resource path="res://ui/char_background.png" type="Texture" id=10]
+[ext_resource path="res://ui/char_stat_label_lck.png" type="Texture" id=11]
+[ext_resource path="res://ui/char_name.png" type="Texture" id=12]
+[ext_resource path="res://ui/char_stat_label_agi.png" type="Texture" id=13]
+[ext_resource path="res://ui/char_class_rank_bg.png" type="Texture" id=15]
+[ext_resource path="res://ui/char_action_button.png" type="Texture" id=16]
+[ext_resource path="res://ui/char_class_rank_4.png" type="Texture" id=17]
+[ext_resource path="res://ui/char_stats.png" type="Texture" id=18]
+[ext_resource path="res://ui/char_action_box_bg.png" type="Texture" id=19]
+[ext_resource path="res://ui/char_action_box_outline.png" type="Texture" id=24]
+[ext_resource path="res://ui/char_stat_label_res.png" type="Texture" id=27]
+[ext_resource path="res://ui/char_stat_label_int.png" type="Texture" id=29]
+[ext_resource path="res://ui/test_font/ntesmall.fnt" type="BitmapFont" id=30]
+[ext_resource path="res://ui/char_action_scrollbar_theme.tres" type="Theme" id=31]
+
+[node name="Control" type="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -320.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 320, 192 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.68
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 192.0
+grow_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="MarginContainer"]
+margin_right = 321.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 320, 192 )
+texture = ExtResource( 10 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+margin_right = 321.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 320, 192 )
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 317.0
+margin_bottom = 188.0
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PortraitStats" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 184.0
+custom_constants/separation = 4
+
+[node name="Portrait" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 9 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 183.0
+rect_min_size = Vector2( 64, 115 )
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats_Graphic" type="NinePatchRect" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer"]
+margin_right = 64.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 64, 115 )
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 64, 115 )
+patch_margin_left = 31
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer"]
+margin_right = 64.0
+margin_bottom = 115.0
+custom_constants/margin_right = 1
+custom_constants/margin_top = 1
+custom_constants/margin_left = 1
+custom_constants/margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 63.0
+margin_bottom = 114.0
+custom_constants/separation = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Str" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer"]
+margin_right = 62.0
+margin_bottom = 18.0
+custom_constants/separation = 0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Str"]
+margin_right = 30.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Str"]
+margin_left = 30.0
+margin_right = 62.0
+margin_bottom = 18.0
+grow_horizontal = 2
+rect_min_size = Vector2( 32, 18 )
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Str/MarginContainer"]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "53"
+align = 1
+valign = 1
+
+[node name="Def" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 19.0
+margin_right = 62.0
+margin_bottom = 37.0
+custom_constants/separation = 0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Def"]
+margin_right = 30.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Def"]
+margin_left = 30.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 32, 0 )
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Def/MarginContainer"]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "40"
+align = 1
+
+[node name="Int" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 62.0
+margin_bottom = 56.0
+custom_constants/separation = 0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Int"]
+margin_right = 30.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 29 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Int"]
+margin_left = 30.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 32, 0 )
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Int/MarginContainer"]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "8"
+align = 1
+
+[node name="Res" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 57.0
+margin_right = 62.0
+margin_bottom = 75.0
+custom_constants/separation = 0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Res"]
+margin_right = 30.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 27 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Res"]
+margin_left = 30.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 32, 0 )
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Res/MarginContainer"]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "19"
+align = 1
+
+[node name="Agi" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 62.0
+margin_bottom = 94.0
+custom_constants/separation = 0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Agi"]
+margin_right = 30.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 13 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Agi"]
+margin_left = 30.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 32, 0 )
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Agi/MarginContainer"]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "34"
+align = 1
+
+[node name="Lck" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 95.0
+margin_right = 62.0
+margin_bottom = 113.0
+custom_constants/separation = 0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Lck"]
+margin_right = 30.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 11 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Lck"]
+margin_left = 30.0
+margin_right = 62.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 32, 0 )
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/PortraitStats/MarginContainer/MarginContainer/VBoxContainer/Lck/MarginContainer"]
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "22"
+align = 1
+
+[node name="Main Section" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer"]
+margin_left = 68.0
+margin_right = 313.0
+margin_bottom = 184.0
+size_flags_horizontal = 9
+size_flags_vertical = 9
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section"]
+margin_right = 245.0
+margin_bottom = 94.0
+custom_constants/separation = 1
+
+[node name="NameClassBarsColumn" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer"]
+margin_right = 162.0
+margin_bottom = 94.0
+
+[node name="NameClass" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn"]
+margin_right = 162.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 161, 42 )
+
+[node name="Background" type="NinePatchRect" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass"]
+margin_right = 162.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 161, 30 )
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass"]
+margin_right = 162.0
+margin_bottom = 42.0
+custom_constants/separation = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body"]
+margin_right = 162.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 161, 20 )
+custom_constants/margin_right = 8
+custom_constants/margin_top = 3
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/Name"]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 154.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Twilight Sparkle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClassRank" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body"]
+margin_top = 23.0
+margin_right = 162.0
+margin_bottom = 40.0
+custom_constants/margin_right = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank"]
+margin_right = 160.0
+margin_bottom = 17.0
+
+[node name="Class" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank/HBoxContainer"]
+margin_right = 136.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 136, 17 )
+custom_constants/margin_top = 2
+custom_constants/margin_left = 8
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank/HBoxContainer/Class"]
+margin_left = 8.0
+margin_top = 3.0
+margin_right = 136.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Princess Protege"
+
+[node name="Rank" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank/HBoxContainer"]
+margin_left = 140.0
+margin_right = 159.0
+margin_bottom = 17.0
+
+[node name="Background" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank/HBoxContainer/Rank"]
+margin_right = 19.0
+margin_bottom = 17.0
+texture = ExtResource( 15 )
+
+[node name="Value" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/NameClass/Body/ClassRank/HBoxContainer/Rank"]
+margin_right = 19.0
+margin_bottom = 17.0
+texture = ExtResource( 17 )
+
+[node name="Bars" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn"]
+margin_top = 46.0
+margin_right = 162.0
+margin_bottom = 94.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/Bars"]
+margin_right = 162.0
+margin_bottom = 48.0
+texture = ExtResource( 12 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/Bars"]
+margin_right = 162.0
+margin_bottom = 48.0
+custom_constants/separation = 0
+
+[node name="ResourceBar" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/Bars/VBoxContainer" instance=ExtResource( 8 )]
+
+[node name="ResourceBar2" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/Bars/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 16.0
+margin_bottom = 32.0
+
+[node name="ResourceBar3" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/NameClassBarsColumn/Bars/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 32.0
+margin_bottom = 48.0
+
+[node name="TalentColumn" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer"]
+margin_left = 163.0
+margin_right = 245.0
+margin_bottom = 94.0
+
+[node name="MarkAndLevel" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer/TalentColumn" instance=ExtResource( 3 )]
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section"]
+margin_top = 98.0
+margin_right = 245.0
+margin_bottom = 184.0
+custom_constants/separation = -3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2"]
+margin_right = 243.0
+margin_bottom = 86.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer"]
+margin_right = 243.0
+margin_bottom = 86.0
+texture = ExtResource( 19 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer"]
+margin_right = 243.0
+margin_bottom = 86.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer"]
+margin_right = 241.0
+margin_bottom = 86.0
+size_flags_vertical = 3
+theme = ExtResource( 31 )
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer"]
+margin_right = 231.0
+margin_bottom = 18.0
+custom_constants/margin_top = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer"]
+margin_top = 1.0
+margin_right = 231.0
+margin_bottom = 18.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack1" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_left = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack1"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack1"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName1" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack1/MarginContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack2" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 17.0
+margin_right = 231.0
+margin_bottom = 34.0
+custom_constants/margin_left = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack2"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack2"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack2/MarginContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack3" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 34.0
+margin_right = 231.0
+margin_bottom = 51.0
+custom_constants/margin_left = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack3"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack3"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack3/MarginContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack4" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 51.0
+margin_right = 231.0
+margin_bottom = 68.0
+custom_constants/margin_left = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack4"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack4"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack4/MarginContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack5" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 68.0
+margin_right = 231.0
+margin_bottom = 85.0
+custom_constants/margin_left = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack5"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack5"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack5/MarginContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack6" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 85.0
+margin_right = 231.0
+margin_bottom = 102.0
+custom_constants/margin_left = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack6"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack6"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack6/MarginContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack7" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 102.0
+margin_right = 231.0
+margin_bottom = 119.0
+custom_constants/margin_left = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack7"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack7"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack7/MarginContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack8" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 119.0
+margin_right = 231.0
+margin_bottom = 136.0
+custom_constants/margin_left = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack8"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+texture_normal = ExtResource( 16 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack8"]
+margin_left = 1.0
+margin_right = 231.0
+margin_bottom = 17.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 0
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackName2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Attack8/MarginContainer"]
+margin_left = 5.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 15.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attack 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Main Section/HBoxContainer2/MarginContainer"]
+margin_right = 243.0
+margin_bottom = 86.0
+mouse_filter = 2
+texture = ExtResource( 24 )

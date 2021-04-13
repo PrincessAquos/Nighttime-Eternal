@@ -1,0 +1,666 @@
+{
+	"sheets": [
+		{
+			"name": "identities",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "palette",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "body_model",
+					"display": null
+				},
+				{
+					"typeStr": "5:earth,unicorn,pegasus,alicorn",
+					"name": "body_variant"
+				},
+				{
+					"typeStr": "1",
+					"name": "mane_model"
+				},
+				{
+					"typeStr": "1",
+					"name": "tail_model",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "cutie_mark",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "head_accessory_1"
+				},
+				{
+					"typeStr": "1",
+					"name": "body_accessory_1"
+				},
+				{
+					"typeStr": "1",
+					"name": "head_accessory_2"
+				},
+				{
+					"typeStr": "1",
+					"name": "body_accessory_2"
+				},
+				{
+					"typeStr": "1",
+					"name": "head_accessory_3"
+				},
+				{
+					"typeStr": "1",
+					"name": "body_accessory_3"
+				},
+				{
+					"typeStr": "1",
+					"name": "class_0"
+				},
+				{
+					"typeStr": "1",
+					"name": "class_1",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "class_2",
+					"opt": true
+				}
+			],
+			"lines": [
+				{
+					"id": "twilight",
+					"name": "Twilight Sparkle",
+					"palette": "twilight",
+					"body_model": "mare",
+					"body_variant": 1,
+					"mane_model": "twilight",
+					"tail_model": "twilight",
+					"cutie_mark": "twilight",
+					"class_0": "magic_student",
+					"class_1": "organizer",
+					"class_2": "bookworm",
+					"head_accessory_1": "",
+					"body_accessory_1": "",
+					"head_accessory_2": "",
+					"body_accessory_2": "",
+					"head_accessory_3": "",
+					"body_accessory_3": ""
+				},
+				{
+					"id": "sunset",
+					"name": "Sunset Shimmer",
+					"palette": "sunset",
+					"body_model": "mare",
+					"body_variant": 1,
+					"mane_model": "sunset",
+					"tail_model": "sunset",
+					"cutie_mark": "sunset",
+					"class_0": "princess_protege",
+					"head_accessory_1": "",
+					"body_accessory_1": "",
+					"head_accessory_2": "",
+					"body_accessory_2": "",
+					"head_accessory_3": "",
+					"body_accessory_3": ""
+				},
+				{
+					"id": "applejack",
+					"name": "Applejack",
+					"palette": "applejack",
+					"body_model": "mare",
+					"body_variant": 0,
+					"mane_model": "aj",
+					"tail_model": "aj",
+					"cutie_mark": "aj",
+					"class_0": "athlete",
+					"head_accessory_1": "aj_hat",
+					"class_1": "farmhand",
+					"class_2": "gardener",
+					"body_accessory_1": "",
+					"head_accessory_2": "",
+					"body_accessory_2": "",
+					"head_accessory_3": "",
+					"body_accessory_3": ""
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "base_stats",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "3",
+					"name": "hp",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "stamina",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "resource",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "stren"
+				},
+				{
+					"typeStr": "3",
+					"name": "def",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "intel",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "resil",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "agi",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "luck",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "twilight",
+					"hp": 6,
+					"stamina": 50,
+					"resource": 8,
+					"def": 3,
+					"stren": 3,
+					"intel": 7,
+					"resil": 5,
+					"agi": 5,
+					"luck": 5
+				},
+				{
+					"id": "sunset",
+					"hp": 7,
+					"stamina": 60,
+					"resource": 14,
+					"stren": 4,
+					"def": 2,
+					"intel": 8,
+					"resil": 6,
+					"agi": 6,
+					"luck": 4
+				},
+				{
+					"id": "applejack",
+					"hp": 8,
+					"stamina": 70,
+					"resource": 8,
+					"stren": 7,
+					"def": 6,
+					"intel": 4,
+					"resil": 1,
+					"agi": 6,
+					"luck": 3
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "growths",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "hp",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "stamina"
+				},
+				{
+					"typeStr": "4",
+					"name": "resource",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "stren",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "def",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "intel",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "resil",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "agi",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "luck",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "twilight",
+					"hp": 0.8,
+					"stamina": 0.8,
+					"resource": 1.2,
+					"stren": 0.2,
+					"def": 0.5,
+					"intel": 1.4,
+					"resil": 1,
+					"agi": 0.5,
+					"luck": 0.4
+				},
+				{
+					"id": "sunset",
+					"hp": 0.8,
+					"stamina": 0.8,
+					"resource": 1.1,
+					"stren": 0.2,
+					"def": 0.3,
+					"intel": 1.4,
+					"resil": 0.8,
+					"agi": 0.5,
+					"luck": 0.4
+				},
+				{
+					"id": "applejack",
+					"hp": 1.2,
+					"stamina": 1.4,
+					"resource": 0.6,
+					"stren": 1,
+					"def": 0.8,
+					"intel": 0.4,
+					"resil": 0.2,
+					"agi": 0.8,
+					"luck": 0.4
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "actions",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				},
+				{
+					"typeStr": "5:StaminaFixed,StaminaHalf,StaminaAll,StaminaMax,ResourceFixed,ResourceHalf,ResourceAll,ResourceMax,BothFixed,BothHalf,BothAll,BothMax,Special",
+					"name": "cost_type"
+				},
+				{
+					"typeStr": "3",
+					"name": "cost_stam",
+					"opt": true
+				},
+				{
+					"typeStr": "3",
+					"name": "cost_resource",
+					"opt": true
+				},
+				{
+					"typeStr": "5:Self,LineOfSight,OverWalls,ThruWalls,FourDir",
+					"name": "range_type",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "range_min",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "range_max",
+					"display": null
+				},
+				{
+					"typeStr": "5:Single,Line,Diamond,Special",
+					"name": "area_shape",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "area_size",
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "dmg_base",
+					"display": null
+				},
+				{
+					"typeStr": "5:NA,Physical,Magic,Absolute,Heal",
+					"name": "dmg_type"
+				},
+				{
+					"typeStr": "5:NA,hp,stamina,resource,stren,def,intel,resil,agi,luck,special",
+					"name": "dmg_mod"
+				},
+				{
+					"typeStr": "1",
+					"name": "Description",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "magic_missile",
+					"name": "Magic Missile",
+					"cost_type": 8,
+					"cost_resource": 2,
+					"range_type": 1,
+					"range_min": 1,
+					"range_max": 3,
+					"area_shape": 0,
+					"area_size": 1,
+					"dmg_type": 2,
+					"dmg_base": 2,
+					"dmg_mod": 6,
+					"Description": "Fires a small missile that deals (Intellect + 2) damage.",
+					"cost_stam": 10
+				},
+				{
+					"id": "buck",
+					"name": "Kick",
+					"cost_type": 0,
+					"range_type": 1,
+					"range_min": 1,
+					"range_max": 1,
+					"area_shape": 0,
+					"area_size": 1,
+					"dmg_base": 1,
+					"dmg_type": 1,
+					"dmg_mod": 4,
+					"Description": "Delivers a solid kick with the hind legs, dealing (Strength + 1) damage.",
+					"cost_stam": 10,
+					"cost_resource": 0
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "cutie_marks",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "twilight",
+					"name": "The Magic of Friendship"
+				},
+				{
+					"id": "sunset",
+					"name": "Vengeful Sun"
+				},
+				{
+					"id": "aj",
+					"name": "Honest Apple"
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "classes",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "name",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "magic_student",
+					"name": "Magic Student"
+				},
+				{
+					"id": "princess_protege",
+					"name": "Princess Protege"
+				},
+				{
+					"id": "athlete",
+					"name": "Athlete"
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "class_action_learnsets",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "lv0",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv3"
+				},
+				{
+					"typeStr": "1",
+					"name": "lv6"
+				},
+				{
+					"typeStr": "1",
+					"name": "lv9"
+				}
+			],
+			"lines": [
+				{
+					"id": "magic_student",
+					"lv0": "magic_missile",
+					"lv3": "",
+					"lv6": "",
+					"lv9": ""
+				},
+				{
+					"id": "princess_protege",
+					"lv3": "",
+					"lv6": "",
+					"lv9": "",
+					"lv0": "magic_missile"
+				},
+				{
+					"id": "athlete",
+					"lv3": "",
+					"lv6": "",
+					"lv9": ""
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "class_talent_learnsets",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "lv0",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv3",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv6"
+				},
+				{
+					"typeStr": "1",
+					"name": "lv9"
+				}
+			],
+			"lines": [
+				{
+					"id": "magic_student",
+					"lv6": "",
+					"lv9": ""
+				},
+				{
+					"id": "princess_protege",
+					"lv6": "",
+					"lv9": ""
+				},
+				{
+					"id": "athlete",
+					"lv6": "",
+					"lv9": ""
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "variant_action_learnsets",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "lv0",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv5",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv10",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv15",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv20",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv25",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv30",
+					"opt": true
+				},
+				{
+					"typeStr": "1",
+					"name": "lv35",
+					"opt": true
+				}
+			],
+			"lines": [
+				{
+					"id": "unicorn",
+					"lv0": "buck"
+				},
+				{
+					"id": "earth",
+					"lv0": "buck"
+				},
+				{
+					"id": "pegasus",
+					"lv0": "buck"
+				}
+			],
+			"separators": [],
+			"props": {}
+		}
+	],
+	"customTypes": [],
+	"compress": false
+}
