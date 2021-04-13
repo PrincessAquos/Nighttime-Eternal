@@ -8,8 +8,8 @@ switch (function) {
         return "Check Stats";
     case "close":
         return "Close";
-    case "attack":
-        return "Attack";
+    case "actions":
+        return "Actions";
     case "wait":
         return "Wait";
     default:

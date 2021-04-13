@@ -1,0 +1,122 @@
+{
+	pony: {
+		name: "Applejack",
+		race: "earth",
+		body: {
+			model: "mare",
+			outline: [
+				{
+					r:233,
+					g:113,
+					b:53,
+				},
+				{
+					r:233,
+					g:113,
+					b:53,
+				},
+				{
+					r:233,
+					g:113,
+					b:53,
+				},
+				{
+					r:233,
+					g:113,
+					b:53,
+				},
+			],
+			fill: [
+				{
+					r:250,
+					g:186,
+					b:97,
+				},
+				{
+					r:242,
+					g:171,
+					b:84,
+				},
+				{
+					r:38,
+					g:119,
+					b:22,
+				},
+				{
+					r:96,
+					g:189,
+					b:80,
+				},
+			],
+		}
+		mane: {
+			model: "aj",
+			outline: [
+				{
+					r:244,
+					g:221,
+					b:108,
+				},
+				{
+					r:244,
+					g:221,
+					b:108,
+				},
+				{
+					r:244,
+					g:221,
+					b:108,
+				},
+				{
+					r:234,
+					g:64,
+					b:63,
+				},
+			],
+			fill: [
+				{
+					r:255,
+					g:250,
+					b:171,
+				},
+				{
+					r:255,
+					g:250,
+					b:171,
+				},
+				{
+					r:255,
+					g:250,
+					b:171,
+				},
+				{
+					r:255,
+					g:250,
+					b:171,
+				},
+			],
+		},
+		tail: {
+			model: "aj",
+			use_mane_palette: true,
+		},
+		accessory_1: {
+			model: "aj_hat"
+		}
+		cutie_mark: "aj",
+	},
+	starting_stats:{
+		level: 1,
+		xp: 0,
+		hp: 11,
+		stamina: 72,
+		resource: 61,
+		strength: 1,
+		defense: 1,
+		skill: 6,
+		resilience: 4,
+		agility: 3,
+		luck: 3,
+		class: "magic_student"
+	}
+}

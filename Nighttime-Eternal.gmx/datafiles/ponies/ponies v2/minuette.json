@@ -1,0 +1,120 @@
+{
+	pony: {
+		name: "Minuette",
+		race: "unicorn",
+		body: {
+			model: "mare",
+			outline: [
+				{
+					r:68,
+					g:125,
+					b:192,
+				},
+				{
+					r:68,
+					g:125,
+					b:192,
+				},
+				{
+					r:68,
+					g:125,
+					b:192,
+				},
+				{
+					r:68,
+					g:125,
+					b:192,
+				},
+			],
+			fill: [
+				{
+					r:132,
+					g:200,
+					b:243,
+				},
+				
+				{
+					r:123,
+					g:190,
+					b:234,
+				},
+				{
+					r:30,
+					g:28,
+					b:97,
+				},
+				{
+					r:81,
+					g:108,
+					b:210,
+				},
+			],
+		}
+		mane: {
+			model: "minuette",
+			outline: [
+				{
+					r:48,
+					g:48,
+					b:154,
+				},
+				{
+					r:161,
+					g:164,
+					b:215,
+				},
+				{
+					r:48,
+					g:48,
+					b:154,
+				},
+				{
+					r:161,
+					g:164,
+					b:215,
+				},
+			],
+			fill: [
+				{
+					r:58,
+					g:57,
+					b:179,
+				},
+				{
+					r:210,
+					g:213,
+					b:241,
+				},
+				{
+					r:58,
+					g:57,
+					b:179,
+				},
+				{
+					r:210,
+					g:213,
+					b:241,
+				},
+			],
+		},
+		tail: {
+			model: "minuette",
+			use_mane_palette: true,
+		},
+		cutie_mark: "time",
+	},
+	starting_stats:{
+		level: 1,
+		xp: 0,
+		hp: 11,
+		stamina: 72,
+		resource: 61,
+		strength: 1,
+		defense: 1,
+		skill: 6,
+		resilience: 4,
+		agility: 3,
+		luck: 3,
+		class: "magic_student"
+	}
+}

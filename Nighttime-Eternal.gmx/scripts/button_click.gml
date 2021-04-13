@@ -9,6 +9,10 @@ switch (button.function) {
         global.cursor.movePath = create_move_path(global.cursor.clickedChar.x, global.cursor.clickedChar.y, global.cursor.clickedChar);
         game_set_state("movement")
         break;
+    // Enter the action selection state
+    case "actions":
+        
+        break;
     // Close the menu
     case "close":
     default:

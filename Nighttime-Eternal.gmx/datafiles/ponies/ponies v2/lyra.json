@@ -1,0 +1,120 @@
+{
+	pony: {
+		name: "Lyra Heartstrings",
+		race: "unicorn",
+		body: {
+			model: "mare",
+			outline: [
+				{
+					r:61,
+					g:171,
+					b:126,
+				},
+				{
+					r:61,
+					g:171,
+					b:126,
+				},
+				{
+					r:61,
+					g:171,
+					b:126,
+				},
+				{
+					r:61,
+					g:171,
+					b:126,
+				},
+			],
+			fill: [
+				{
+					r:145,
+					g:254,
+					b:217,
+				},
+				
+				{
+					r:102,
+					g:219,
+					b:175,
+				},
+				{
+					r:234,
+					g:94,
+					b:1,
+				},
+				{
+					r:241,
+					g:215,
+					b:77,
+				},
+			],
+		}
+		mane: {
+			model: "lyra",
+			outline: [
+				{
+					r:77,
+					g:208,
+					b:200,
+				},
+				{
+					r:119,
+					g:233,
+					b:230,
+				},
+				{
+					r:77,
+					g:208,
+					b:200,
+				},
+				{
+					r:119,
+					g:233,
+					b:230,
+				},
+			],
+			fill: [
+				{
+					r:174,
+					g:232,
+					b:230,
+				},
+				{
+					r:255,
+					g:255,
+					b:255,
+				},
+				{
+					r:174,
+					g:232,
+					b:230,
+				},
+				{
+					r:255,
+					g:255,
+					b:255,
+				},
+			],
+		},
+		tail: {
+			model: "lyra",
+			use_mane_palette: true,
+		},
+		cutie_mark: "lyra",
+	},
+	starting_stats:{
+		level: 1,
+		xp: 0,
+		hp: 11,
+		stamina: 72,
+		resource: 61,
+		strength: 1,
+		defense: 1,
+		skill: 6,
+		resilience: 4,
+		agility: 3,
+		luck: 3,
+		class: "magic_student"
+	}
+}
