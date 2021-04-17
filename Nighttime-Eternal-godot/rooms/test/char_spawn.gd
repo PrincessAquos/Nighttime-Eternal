@@ -15,6 +15,6 @@ func spawn_character(characters, levelmap, movemaps):
 	if character != "null":
 		var character_scene = preload("res://char_components/character.tscn")
 		var inst = character_scene.instance()
-		inst.setup(character, position, levelmap, movemaps)
-		characters.add_character(inst, team)
+		inst.setup(character, position, levelmap, movemaps, team)
+		characters.add_character(inst)
 	queue_free()

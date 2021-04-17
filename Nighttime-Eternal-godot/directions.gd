@@ -18,6 +18,21 @@ static func get_dir_vector(direction):
 		Direction.ERROR:
 			return null
 
+static func get_dir_from_vector(vector:Vector2):
+	match(vector):
+		Vector2(0, -1):
+			return Direction.UP
+		Vector2(-1, 0):
+			return Direction.LEFT
+		Vector2(1, 0):
+			return Direction.RIGHT
+		Vector2(0, 1):
+			return Direction.DOWN
+		Vector2(0, 0):
+			return Direction.ORIGIN
+		_:
+			return Direction.ERROR
+
 static func get_opposite(direction):
 	if direction == Direction.ERROR:
 		return null

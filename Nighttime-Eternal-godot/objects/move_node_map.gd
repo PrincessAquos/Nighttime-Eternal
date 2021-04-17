@@ -8,18 +8,18 @@ const HINT_OPACITY = 0.1
 const ACTIVE_OPACITY = 0.6
 
 var level_tilemap:LevelMap
-var char_pos:Vector2
+var character
 
 # var pqueue:PQueue
 
 
-func _init(lvl_tilemap:TileMap, char_position:Vector2, stamina:int, actions:Array):
+func _init(lvl_tilemap:TileMap, in_character):
 	level_tilemap = lvl_tilemap
-	char_pos = char_position
+	character = in_character
 	visible = false
-	tile_set = MoveNodeTileSet.new(actions)
+	tile_set = MoveNodeTileSet.new(in_character.actions)
 	cell_size = Vector2(32, 32)
-	generate_move_map(stamina, actions)
+	generate_move_map(in_character.stats.stamina.curr_val, in_character.actions)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -28,9 +28,10 @@ func _ready():
 
 
 func generate_move_map(stamina:int, actions):
+	clear()
 	var pqueue = PQueue.new()
 	# pqueue = PQueue.new()
-	pqueue.enqueue(char_pos, Direction.ORIGIN, stamina)
+	pqueue.enqueue(character.grid_pos, Direction.ORIGIN, stamina)
 	while !pqueue.empty():
 		var item = pqueue.dequeue()
 		
@@ -81,7 +82,7 @@ func set_cellv_mm(position: Vector2, tile: int, direction: int,
 
 func most_efficient_path(pos:Vector2):
 	var arr = []
-	while pos != char_pos:
+	while pos != character.grid_pos:
 		arr.append(pos)
 		var dir = get_tile_dir(pos)
 		if dir != Direction.ERROR:

@@ -8,6 +8,10 @@ func _init(level, base_value, growth_rate).(level, base_value, growth_rate):
 	curr_val = val
 
 
+func decrease(amount):
+	curr_val -= amount
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
