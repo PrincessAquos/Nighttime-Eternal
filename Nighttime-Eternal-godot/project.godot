@@ -67,7 +67,7 @@ _global_script_classes=[ {
 "base": "TileMap",
 "class": "LevelMap",
 "language": "GDScript",
-"path": "res://rooms/test/level_map.gd"
+"path": "res://maps/level_map.gd"
 }, {
 "base": "TileMap",
 "class": "MoveMap",
@@ -79,6 +79,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://objects/move_node_tileset.gd"
 }, {
+"base": "Reference",
+"class": "PQueue",
+"language": "GDScript",
+"path": "res://pqueue.gd"
+}, {
 "base": "MarginContainer",
 "class": "PanelCharacter",
 "language": "GDScript",
@@ -88,6 +93,11 @@ _global_script_classes=[ {
 "class": "PathTileMap",
 "language": "GDScript",
 "path": "res://objects/path_tilemap.gd"
+}, {
+"base": "Reference",
+"class": "Queue",
+"language": "GDScript",
+"path": "res://queue.gd"
 }, {
 "base": "Node",
 "class": "SceneCharacters",
@@ -129,8 +139,10 @@ _global_script_class_icons={
 "LevelMap": "",
 "MoveMap": "",
 "MoveNodeTileSet": "",
+"PQueue": "",
 "PanelCharacter": "",
 "PathTileMap": "",
+"Queue": "",
 "SceneCharacters": "",
 "Stage": "",
 "Stat": "",

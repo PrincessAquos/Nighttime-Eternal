@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://rooms/test/room_run_test.gd" type="Script" id=1]
-[ext_resource path="res://rooms/test/level_map.gd" type="Script" id=2]
+[ext_resource path="res://maps/level_map.gd" type="Script" id=2]
 [ext_resource path="res://objects/move_tileset.tres" type="TileSet" id=3]
+
 
 [node name="Run Test" type="Node2D"]
 script = ExtResource( 1 )

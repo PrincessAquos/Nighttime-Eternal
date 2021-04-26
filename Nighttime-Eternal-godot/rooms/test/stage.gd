@@ -19,24 +19,6 @@ enum ScrollDirs {
 }
 
 func _ready():
-	var bidict = BiDict.new()
-	bidict.set_item("test", 2)
-	print(bidict.has("test"))
-	print(bidict.has(2))
-	bidict.set_item("test", 3)
-	print(bidict.bd)
-	print(bidict.reverse)
-	print(bidict.has(2))
-	print(bidict.has(3))
-	bidict.set_item("bump", 3)
-	print(bidict.bd)
-	print(bidict.reverse)
-	bidict.set_item("test", 5)
-	print(bidict.bd)
-	print(bidict.reverse)
-	bidict.erase("bump")
-	print(bidict.bd)
-	print(bidict.reverse)
 	
 	level_map = get_node("Level/TileMap")
 	move_maps = get_node("MoveMaps")

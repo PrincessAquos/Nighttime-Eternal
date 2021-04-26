@@ -35,7 +35,6 @@ func get_mouse_grid_pos():
 func update_grid_pos():
 	var new_grid_pos = get_mouse_grid_pos()
 	if new_grid_pos != grid_pos:
-		var dir = DirHelper.get_dir_from_vector(new_grid_pos - grid_pos)
 		grid_pos = new_grid_pos
 		position = levelmap.map_to_world(grid_pos)
 		get_node("Grid Pos").text = "X: " + str(grid_pos.x) + ", Y: " + str(grid_pos.y)
@@ -47,7 +46,7 @@ func update_grid_pos():
 		
 		if moving_char != null:
 			
-			path.add_path(grid_pos, dir)
+			path.add_path(grid_pos)
 
 
 func update_char_selection():

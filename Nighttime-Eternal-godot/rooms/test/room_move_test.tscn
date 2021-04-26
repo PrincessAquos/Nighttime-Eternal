@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/cursor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://rooms/test/level_map.tscn" type="PackedScene" id=2]
+[ext_resource path="res://maps/test_map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://rooms/test/char_spawn.gd" type="Script" id=3]
 [ext_resource path="res://objects/assets/move_node.png" type="Texture" id=5]
 [ext_resource path="res://rooms/test/stage.gd" type="Script" id=6]

@@ -5,7 +5,7 @@ class_name PanelCharacter
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var test_level_map = preload("res://rooms/test/level_map.tscn")
+var test_level_map = preload("res://maps/test_map.tscn")
 
 var active = false setget active_set
 

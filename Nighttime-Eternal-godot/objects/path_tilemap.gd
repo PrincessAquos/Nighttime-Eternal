@@ -34,10 +34,25 @@ func reset_path():
 	clear()
 
 
-func add_path(pos:Vector2, dir):
-	if pos == movemap.character.grid_pos:
+func are_adjacent(pos1, pos2):
+	var diff = pos1 - pos2
+	return diff in [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN]
+		
+
+
+func add_path(pos:Vector2):
+	var prev_pos = path.back()
+	if prev_pos == null:
+		prev_pos = movemap.character.grid_pos
+	
+	var diff = pos - prev_pos
+	var dir = DirHelper.get_dir_from_vector(diff)
+	
+	var new_stam_cost = stam_cost + movemap.level_tilemap.get_tile(pos).cost
+	
+	if pos == movemap.character.grid_pos or movemap.get_cellv(pos) == -1:
 		reset_path()
-	elif stam_cost > movemap.character.stats.stamina.curr_val:
+	elif !are_adjacent(pos, prev_pos):
 		most_efficient_path(pos)
 	elif pos in path:
 		var index = path.find(pos)
@@ -47,19 +62,22 @@ func add_path(pos:Vector2, dir):
 			set_cellv(cut_pos, -1)
 		var new_path = path.slice(0, index)
 		path = new_path
-		var prev_pos
+		var new_prev_pos
 		if path.size() > 1:
-			prev_pos = path[path.size()-2]
+			new_prev_pos = path[path.size()-2]
 		else:
-			prev_pos = movemap.character.grid_pos
-		set_cellv(pos, path_tile_type(DirHelper.get_dir_from_vector(path.back() - prev_pos), null))
+			new_prev_pos = movemap.character.grid_pos
+		set_cellv(pos, path_tile_type(DirHelper.get_dir_from_vector(path.back() - new_prev_pos), null))
+	elif new_stam_cost > movemap.character.stats.stamina.curr_val:
+		most_efficient_path(pos)
 	else:
-		stam_cost += movemap.level_tilemap.get_tile(pos).cost
+		stam_cost = new_stam_cost
 		if !empty():
 			set_cellv(path.back(), get_updated_end_tile(dir))
 		var tile = path_tile_type(dir, null)
 		set_cellv(pos, tile)
 		path.push_back(pos)
+		print(stam_cost)
 	return
 
 
