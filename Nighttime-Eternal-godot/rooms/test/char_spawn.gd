@@ -9,12 +9,13 @@ export var team = Team.ALLY
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("charspawn")
 	pass
 
-func spawn_character(characters, levelmap, movemaps):
+func spawn_character():
 	if character != "null":
 		var character_scene = preload("res://char_components/character.tscn")
 		var inst = character_scene.instance()
-		inst.setup(character, position, levelmap, movemaps, team)
-		characters.add_character(inst)
+		inst.setup(character, position, team)
+		Game.character_parent.add_character(inst)
 	queue_free()

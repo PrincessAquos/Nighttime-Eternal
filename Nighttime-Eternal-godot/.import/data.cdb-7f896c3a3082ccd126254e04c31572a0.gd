@@ -148,7 +148,7 @@ class Growths:
 
 class Actions:
 	enum CostType {STAMINA_FIXED, STAMINA_HALF, STAMINA_ALL, STAMINA_MAX, RESOURCE_FIXED, RESOURCE_HALF, RESOURCE_ALL, RESOURCE_MAX, BOTH_FIXED, BOTH_HALF, BOTH_ALL, BOTH_MAX, SPECIAL}
-	enum RangeType {SELF, LINE_OF_SIGHT, OVER_WALLS, THRU_WALLS, FOUR_DIR}
+	enum RangeType {SELF, SAME_ELEVATION, LINE_OF_SIGHT, THRU_WALLS, FOUR_DIR}
 	enum AreaShape {SINGLE, LINE, DIAMOND, SPECIAL}
 	enum DmgType {NA, PHYSICAL, MAGIC, ABSOLUTE, HEAL}
 	enum DmgMod {NA, HP, STAMINA, RESOURCE, STREN, DEF, INTEL, RESIL, AGI, LUCK, SPECIAL}
@@ -188,7 +188,7 @@ class Actions:
 			self.dmg_mod = dmg_mod
 			self.Description = Description
 	
-	var all = [ActionsRow.new(magic_missile, "Magic Missile", 8, 10, 2, 1, 1, 3, 0, 1, 2, 2, 6, "Fires a small missile that deals (Intellect + 2) damage."), ActionsRow.new(buck, "Kick", 0, 10, 0, 1, 1, 1, 0, 1, 1, 1, 4, "Delivers a solid kick with the hind legs, dealing (Strength + 1) damage.")]
+	var all = [ActionsRow.new(magic_missile, "Magic Missile", 8, 10, 2, 2, 1, 3, 0, 1, 2, 2, 6, "Fires a small missile that deals (Intellect + 2) damage."), ActionsRow.new(buck, "Buck", 8, 10, 0, 1, 1, 1, 0, 1, 1, 1, 4, "Delivers a solid kick with the hind legs, dealing (Strength + 1) damage.")]
 	var index = {magic_missile: 0, buck: 1}
 	
 	func get(id:String) -> ActionsRow:
@@ -323,8 +323,8 @@ class ClassTalentLearnsets:
 
 class VariantActionLearnsets:
 
-	const unicorn := "unicorn"
 	const earth := "earth"
+	const unicorn := "unicorn"
 	const pegasus := "pegasus"
 
 	class VariantActionLearnsetsRow:
@@ -349,8 +349,8 @@ class VariantActionLearnsets:
 			self.lv30 = lv30
 			self.lv35 = lv35
 	
-	var all = [VariantActionLearnsetsRow.new(unicorn, "buck"), VariantActionLearnsetsRow.new(earth, "buck"), VariantActionLearnsetsRow.new(pegasus, "buck")]
-	var index = {unicorn: 0, earth: 1, pegasus: 2}
+	var all = [VariantActionLearnsetsRow.new(earth, "buck"), VariantActionLearnsetsRow.new(unicorn, "buck"), VariantActionLearnsetsRow.new(pegasus, "buck")]
+	var index = {earth: 0, unicorn: 1, pegasus: 2}
 	
 	func get(id:String) -> VariantActionLearnsetsRow:
 		if index.has(id):

@@ -81,7 +81,7 @@ func update_ui(character:Character):
 		
 		stats_panel.stat_labels_update(character.stats)
 		
-		actions_panel.assign_buttons(character.actions)
+		actions_panel.assign_buttons(character, character.actions)
 		active_set(true)
 
 
@@ -102,7 +102,7 @@ func resource_bar_update(stats):
 
 func test():
 	var test_char = Character.new()
-	test_char.setup("twilight", Vector2(0, 0), test_level_map.instance(), Node2D.new())
+	test_char.setup("twilight", Vector2(0, 0))
 	
 	update_ui(test_char)
 

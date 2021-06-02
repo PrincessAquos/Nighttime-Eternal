@@ -3,6 +3,7 @@ extends MarginContainer
 const DB = preload("res://db/data.cdb")
 const BodyVariant = DB.Identities.BodyVariant
 
+
 var active = false setget active_set
 # Declare member variables here. Examples:
 # var a = 2

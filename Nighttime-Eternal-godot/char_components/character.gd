@@ -32,8 +32,12 @@ var move_path:PathTileMap = null
 # var a = 2
 # var b = "text"
 
-func setup(char_id:String, pos:Vector2, levelmap:LevelMap, movemaps:Node2D, in_team:int = Team.ALLY):
+func setup(char_id:String, pos:Vector2, in_team:int = Team.ALLY):
 	team = in_team
+	
+	add_to_group("allies")
+	add_to_group("enemies")
+	add_to_group("neutral")
 	
 	# Get the base character data
 	var db_identity = Data.identities.get(char_id)
@@ -44,8 +48,7 @@ func setup(char_id:String, pos:Vector2, levelmap:LevelMap, movemaps:Node2D, in_t
 	char_name = db_identity.name
 	
 	char_class = CharacterClass.new(db_identity.class_0)
-	
-	actions = char_class.get_actions()
+	actions = get_actions(db_identity.body_variant)
 	
 	# Load the appearance data
 	var appear_scene = preload("res://char_components/appearance.tscn")
@@ -72,9 +75,9 @@ func setup(char_id:String, pos:Vector2, levelmap:LevelMap, movemaps:Node2D, in_t
 	position = pos
 	grid_pos = position/32
 	
-	move_map = MoveMap.new(levelmap, self)
+	move_map = MoveMap.new(self)
 	# move_map = MoveMap.new(levelmap, grid_pos, 90, actions)
-	movemaps.add_child(move_map)
+	Game.movemap_parent.add_child(move_map)
 
 
 func refresh_movemap():
@@ -103,6 +106,36 @@ func move():
 		stats.stamina.decrease(move_path.stam_cost)
 		print("hi")
 		move_path = null
+
+
+func get_actions(body_variant):
+	var new_actions = []
+	new_actions += char_class.get_actions()
+	new_actions += get_variant_actions(Data.variantactionlearnsets.get_index(body_variant))
+	
+	return new_actions
+
+
+func get_variant_actions(var_act_learns:Data.VariantActionLearnsets.VariantActionLearnsetsRow):
+	var act_array = []
+	var act_id
+	if level >= 0:
+		act_id = var_act_learns.lv0
+		if act_id != "":
+			act_array.append(Action.new(act_id))
+	if level >= 5:
+		act_id = var_act_learns.lv5
+		if act_id != "":
+			act_array.append(Action.new(act_id))
+	if level >= 10:
+		act_id = var_act_learns.lv10
+		if act_id != "":
+			act_array.append(Action.new(act_id))
+	if level >= 15:
+		act_id = var_act_learns.lv15
+		if act_id != "":
+			act_array.append(Action.new(act_id))
+	return act_array
 
 
 func _process(delta):

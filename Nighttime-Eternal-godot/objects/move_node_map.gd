@@ -7,14 +7,12 @@ const Direction = DirHelper.Direction
 const HINT_OPACITY = 0.1
 const ACTIVE_OPACITY = 0.6
 
-var level_tilemap:LevelMap
 var character
 
 # var pqueue:PQueue
 
 
-func _init(lvl_tilemap:TileMap, in_character):
-	level_tilemap = lvl_tilemap
+func _init(in_character):
 	character = in_character
 	visible = false
 	tile_set = MoveNodeTileSet.new(in_character.actions)
@@ -43,7 +41,7 @@ func generate_move_map(stamina:int, actions):
 		# Queue in all valid directions
 		for qdir in dirs:
 			var new_pos = item.pos + DirHelper.get_dir_vector(qdir)
-			var tile = level_tilemap.get_tile(new_pos)
+			var tile = Game.levelmap.get_tile(new_pos)
 			
 			if tile.wall_height == 0:
 				# Get the stamina remaining on this journey

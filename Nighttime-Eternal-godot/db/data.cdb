@@ -355,9 +355,8 @@
 					"opt": true
 				},
 				{
-					"typeStr": "5:Self,LineOfSight,OverWalls,ThruWalls,FourDir",
-					"name": "range_type",
-					"display": null
+					"typeStr": "5:Self,SameElevation,LineOfSight,ThruWalls,FourDir",
+					"name": "range_type"
 				},
 				{
 					"typeStr": "3",
@@ -404,7 +403,7 @@
 					"name": "Magic Missile",
 					"cost_type": 8,
 					"cost_resource": 2,
-					"range_type": 1,
+					"range_type": 2,
 					"range_min": 1,
 					"range_max": 3,
 					"area_shape": 0,
@@ -417,8 +416,8 @@
 				},
 				{
 					"id": "buck",
-					"name": "Kick",
-					"cost_type": 0,
+					"name": "Buck",
+					"cost_type": 8,
 					"range_type": 1,
 					"range_min": 1,
 					"range_max": 1,
@@ -645,11 +644,11 @@
 			],
 			"lines": [
 				{
-					"id": "unicorn",
+					"id": "earth",
 					"lv0": "buck"
 				},
 				{
-					"id": "earth",
+					"id": "unicorn",
 					"lv0": "buck"
 				},
 				{

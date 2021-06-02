@@ -20,14 +20,13 @@ enum ScrollDirs {
 
 func _ready():
 	
+	Game.stage = self
+	
 	level_map = get_node("Level/TileMap")
 	move_maps = get_node("MoveMaps")
 	characters = get_node("Characters")
 	
-	var children = get_children()
-	for child in children:
-		if child is CharacterSpawn:
-			child.spawn_character(characters, level_map, move_maps)
+	
 
 
 func _process(delta):

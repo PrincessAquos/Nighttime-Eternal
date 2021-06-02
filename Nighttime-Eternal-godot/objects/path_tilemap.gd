@@ -48,7 +48,14 @@ func add_path(pos:Vector2):
 	var diff = pos - prev_pos
 	var dir = DirHelper.get_dir_from_vector(diff)
 	
-	var new_stam_cost = stam_cost + movemap.level_tilemap.get_tile(pos).cost
+	var floor_tile = Game.levelmap.get_tile(pos)
+	var new_stam_cost
+	
+	if floor_tile.wall_height == 0:
+		new_stam_cost = stam_cost + Game.levelmap.get_tile(pos).cost
+	else:
+		reset_path()
+		return
 	
 	if pos == movemap.character.grid_pos or movemap.get_cellv(pos) == -1:
 		reset_path()
@@ -58,7 +65,7 @@ func add_path(pos:Vector2):
 		var index = path.find(pos)
 		var removed = path.slice(index+1, path.size()-1)
 		for cut_pos in removed:
-			stam_cost -= movemap.level_tilemap.get_tile(cut_pos).cost
+			stam_cost -= Game.levelmap.get_tile(cut_pos).cost
 			set_cellv(cut_pos, -1)
 		var new_path = path.slice(0, index)
 		path = new_path
@@ -82,7 +89,7 @@ func add_path(pos:Vector2):
 
 
 func add_path_reverse(pos:Vector2, dir_in, dir_out):
-	stam_cost += movemap.level_tilemap.get_tile(pos).cost
+	stam_cost += Game.levelmap.get_tile(pos).cost
 	path.push_front(pos)
 	var tile = path_tile_type(dir_in, dir_out)
 	print("Setting tile " + str(tile))

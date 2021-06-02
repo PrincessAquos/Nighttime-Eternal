@@ -1,5 +1,8 @@
 extends MarginContainer
 
+const DB = preload("res://db/data.cdb")
+const DmgType = DB.Actions.DmgType
+
 const TEX_USABLE_BG = preload("res://ui/char_action_button.png")
 const TEX_UNUSABLE_BG = preload("res://ui/char_action_button_unusable.png")
 
@@ -19,6 +22,7 @@ var act_name:String = "Test it, See it!?" setget name_set
 var cost:int = 25 setget cost_set
 var res_cost:int = 4 setget res_cost_set
 var dmg:int = 8 setget dmg_set
+var dmg_type:int setget dmg_type_set
 var usable = true setget usable_set
 
 var act_button:TextureButton
@@ -30,16 +34,17 @@ var res_cost_icon:TextureRect
 var dmg_label:Label
 var dmg_icon:TextureRect
 
-func assign_action(action:Action):
+func assign_action(character, action):
 	if action == null:
 		visible = false
 		act = null
 	else:
 		act = action
 		name_set(action.display_name)
-		dmg_set(action.dmg)
+		dmg_set(action.get_damage(character))
 		cost_set(action.stam_cost)
 		res_cost_set(action.res_cost)
+		dmg_type_set(action.dmg_type)
 		usable_set(action.usable)
 		visible = true
 
@@ -62,6 +67,10 @@ func cost_set(new_val):
 	cost = new_val
 	cost_label.text = String(cost)
 
+func dmg_type_set(new_val):
+	dmg_type = new_val
+	dmg_icon.texture = TEX_USABLE_PHYS_ICON
+
 func dmg_set(new_val):
 	dmg = new_val
 	dmg_label.text = String(dmg)
@@ -77,13 +86,22 @@ func usable_set(new_val):
 		act_button.texture_normal = TEX_USABLE_BG
 		cost_icon.texture = TEX_USABLE_STAM_ICON
 		res_cost_icon.texture = TEX_USABLE_MANA_ICON
-		dmg_icon.texture = TEX_USABLE_MAGIC_ICON
+		match(dmg_type):
+			DmgType.MAGIC:
+				dmg_icon.texture = TEX_USABLE_MAGIC_ICON
+			DmgType.PHYSICAL:
+				dmg_icon.texture = TEX_USABLE_PHYS_ICON
+		
 	else:
 		set_label_colors(Color("#d2d2d2"))
 		act_button.texture_normal = TEX_UNUSABLE_BG
 		cost_icon.texture = TEX_UNUSABLE_STAM_ICON
 		res_cost_icon.texture = TEX_USABLE_MANA_ICON
-		dmg_icon.texture = TEX_UNUSABLE_MAGIC_ICON
+		match(dmg_type):
+			DmgType.MAGIC:
+				dmg_icon.texture = TEX_UNUSABLE_MAGIC_ICON
+			DmgType.PHYSICAL:
+				dmg_icon.texture = TEX_UNUSABLE_PHYS_ICON
 
 func set_label_colors(color):
 	name_label.add_color_override("font_color", color)

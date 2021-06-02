@@ -8,13 +8,13 @@ onready var action_buttons = get_node("ScrollMargin/ScrollContainer/ListMargin/A
 var scene_action_button:PackedScene = preload("res://ui/panel_action.tscn")
 var active = false setget active_set
 
-func assign_buttons(action_list:Array):
+func assign_buttons(character:Character, action_list:Array):
 	var i = 0
 	for action_button in action_buttons:
 		if i < action_list.size():
-			action_button.assign_action(action_list[i])
+			action_button.assign_action(character, action_list[i])
 		else:
-			action_button.assign_action(null)
+			action_button.assign_action(character, null)
 		i += 1
 	return
 
@@ -24,20 +24,8 @@ func _ready():
 		act_button.visible = false
 	action_buttons[0].visible = true
 	
-	test()
 	return # Replace with function body.
 
-func test():
-	var test_list = [
-		Action.new("buck"),
-		Action.new("buck"),
-		Action.new("buck"),
-		Action.new("magic_missile"),
-		Action.new("buck"),
-		Action.new("magic_missile"),
-		Action.new("magic_missile"),
-	]
-	assign_buttons(test_list)
 
 func active_set(new_val):
 	active = new_val

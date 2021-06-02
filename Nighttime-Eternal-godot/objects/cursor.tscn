@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://objects/assets/cursor.png" type="Texture" id=1]
 [ext_resource path="res://rooms/test/cursor.gd" type="Script" id=2]
+[ext_resource path="res://objects/submenu.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
 [node name="Cursor" type="Area2D"]
 script = ExtResource( 2 )
+submenu_scene = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 16, 16 )

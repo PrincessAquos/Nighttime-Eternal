@@ -1,0 +1,97 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/assets/char_menu_frame.png" type="Texture" id=1]
+[ext_resource path="res://ui/submenu/submenu_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/submenu.gd" type="Script" id=3]
+
+[node name="MarginContainer" type="MarginContainer"]
+margin_right = 47.0
+margin_bottom = 18.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 60.0
+margin_bottom = 69.0
+texture = ExtResource( 1 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 60.0
+margin_bottom = 69.0
+custom_constants/margin_right = 1
+custom_constants/margin_top = 1
+custom_constants/margin_left = 1
+custom_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 59.0
+margin_bottom = 68.0
+custom_constants/separation = 1
+
+[node name="SubMenuButton" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 58.0
+
+[node name="SubMenuButton2" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 17.0
+margin_right = 58.0
+margin_bottom = 33.0
+
+[node name="TextureButton" parent="MarginContainer/VBoxContainer/SubMenuButton2" index="0"]
+margin_right = 58.0
+
+[node name="MarginContainer" parent="MarginContainer/VBoxContainer/SubMenuButton2" index="1"]
+margin_right = 58.0
+
+[node name="Label" parent="MarginContainer/VBoxContainer/SubMenuButton2/MarginContainer" index="0"]
+margin_right = 52.0
+text = "Act"
+
+[node name="SubMenuButton4" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 34.0
+margin_right = 58.0
+margin_bottom = 50.0
+
+[node name="TextureButton" parent="MarginContainer/VBoxContainer/SubMenuButton4" index="0"]
+margin_right = 58.0
+
+[node name="MarginContainer" parent="MarginContainer/VBoxContainer/SubMenuButton4" index="1"]
+margin_right = 58.0
+
+[node name="Label" parent="MarginContainer/VBoxContainer/SubMenuButton4/MarginContainer" index="0"]
+margin_right = 52.0
+text = "Check"
+
+[node name="SubMenuButton3" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 51.0
+margin_right = 58.0
+margin_bottom = 67.0
+
+[node name="TextureButton" parent="MarginContainer/VBoxContainer/SubMenuButton3" index="0"]
+margin_right = 58.0
+
+[node name="MarginContainer" parent="MarginContainer/VBoxContainer/SubMenuButton3" index="1"]
+margin_right = 58.0
+
+[node name="Label" parent="MarginContainer/VBoxContainer/SubMenuButton3/MarginContainer" index="0"]
+margin_right = 52.0
+text = "Cancel"
+
+[editable path="MarginContainer/VBoxContainer/SubMenuButton2"]
+
+[editable path="MarginContainer/VBoxContainer/SubMenuButton4"]
+
+[editable path="MarginContainer/VBoxContainer/SubMenuButton3"]
